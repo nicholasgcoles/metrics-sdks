@@ -7,6 +7,7 @@ RSpec.describe Readme::Metrics do
 
   before do
     stub_request(:post, Readme::Metrics::ENDPOINT)
+    allow(Thread).to receive(:new).and_yield
   end
 
   it "has a version number" do
